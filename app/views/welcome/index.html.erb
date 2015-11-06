@@ -1,0 +1,33 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+<div id="magik" >
+</div>
+<script>
+    function successCallbackFunction(returnedData, status) {
+        $('#magik').html(returnedData);
+        writeStatus(status);
+    }
+    function errorCallbackFunction(request, status, errorMsg) {
+        $('#magik').html(errorMsg);
+        writeStatus(status);
+    }
+    function writeStatus(status) {
+        bb=document.createElement("b");
+        tx=document.createTextNode("status::");
+        tx1=document.createTextNode(status);
+        bb.appendChild(tx);
+        bb.appendChild(tx1);
+        ma=document.getElementById('magik');
+        ma.appendChild(bb);
+        alert(status);
+    }
+    $(function(){
+        $.ajax({
+            url: "http://localhost",
+            type: "GET",
+            dataType: "html", // html, xml, json
+            success: successCallbackFunction,
+            error: errorCallbackFunction
+        });
+    });
+</script>
