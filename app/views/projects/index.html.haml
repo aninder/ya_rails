@@ -1,0 +1,17 @@
+.container
+  %h1.well Projects
+  #project
+    %ul.list-group.projects
+      -@projects.each do |p|
+        %li.list-group-item
+          = p.name
+          %span.glyphicon.glyphicon-user.pull-right{:'data-toggle'=>"popover",
+          :'data-placement'=>'left',
+          :'data-content'=>%Q(<ul class='tip'>#{p.employees.pluck(:name).map{|n| "<li>#{n}</li>"}.join("")}</ul>),
+          :'data-container'=>"body"}
+          %span.badge{:'data-toggle'=>"tooltip",
+          :'data-placement'=>'left',
+          :'title'=>%Q(<ul class='tip'>#{p.employees.pluck(:name).map{|n| "<li>#{n}</li>"}.join("")}</ul>),
+          :'data-container'=>"body"}
+            =p.employees.count
+

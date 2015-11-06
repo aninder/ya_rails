@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
 
 
+  get 'projects/index'
+
+  get 'projects/new'
+
+  get 'projects/create'
+
+  get 'projects/edit'
+
+  get 'projects/update'
+
+  get 'projects/delete'
+
   resources :list do
       member do
         resources :list_items do
@@ -19,9 +31,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
-  get 'welcome/show'
-  post 'check' => 'welcome#create'
+  root 'projects#index'
+  resources :projects
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

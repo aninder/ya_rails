@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -14,5 +15,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap
 
-
+$(function(){
+    $('[data-toggle="tooltip"]').tooltip({'placement': 'left','html':true});
+    //$('[data-toggle="tooltip"]').focusin();
+    $('[data-toggle="popover"]').popover({'placement': 'left','html':true});
+})

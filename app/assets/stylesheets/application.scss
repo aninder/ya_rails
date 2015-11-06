@@ -12,4 +12,29 @@
  *
  *= require_tree .
  *= require_self
+
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap/tooltip";
+
+.projects {
+  li{
+    &:hover{
+      background: silver;
+    }
+  }
+}
+.tip {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 100px;
+  font-family: "Anonymous Pro", "Inconsolata", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+  font-size: 1.1em;
+  li {
+    padding: 5px;
+    text-align: left;
+    line-height: 1.1em;
+  }
+}
